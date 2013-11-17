@@ -1,0 +1,7 @@
+config/database.yml
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/test/cassettes
+.DS_Store
