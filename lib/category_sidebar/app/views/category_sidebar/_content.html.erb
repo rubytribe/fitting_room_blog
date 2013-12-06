@@ -1,9 +1,10 @@
 <% unless sidebar.categories.blank? -%>
-<h3><%= _("Categories")%></h3>
+<img class="separator" src="/images/theme/assets/side_separator.png"/>
+<h3 id="side-categories"><%= _("CATEGORIES")%></h3>
 <ul id="categories">
 <% for category in sidebar.categories -%>
   <% unless sidebar.empty.blank? and category.article_counter == 0 %>
-  <% counter = sidebar.count ? "<em>(#{category.article_counter})</em>" : "" %>
+  <% counter = sidebar.count ? "(#{category.article_counter})" : "" %>
   <li><%= link_to h("#{category.name} #{counter}".html_safe), category_url(category)  %></li>
   <% end %>
 <% end -%>

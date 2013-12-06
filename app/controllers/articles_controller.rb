@@ -13,8 +13,9 @@ class ArticlesController < ContentController
   helper :'admin/base'
 
   def index
+    @contents = Article.order("published_at desc").limit(5)
     conditions = (Blog.default.statuses_in_timeline) ? ["type in (?, ?)", "Article", "Note"] : ["type = ?", "Article"]
-
+    
       limit = this_blog.per_page(params[:format])
     unless params[:year].blank?
       @articles = Content.published_at(params.values_at(:year, :month, :day)).where(conditions).page(params[:page]).per(limit)
@@ -51,6 +52,7 @@ class ArticlesController < ContentController
   end
 
   def search
+    @contents = Article.order("published_at desc").limit(5)
     @articles = this_blog.articles_matching(params[:q], page: params[:page], per_page: this_blog.per_page(params[:format]) )
     return error(_("No posts found..."), :status => 200) if @articles.empty?
     @page_title = this_blog.search_title_template.to_title(@articles, this_blog, params)
@@ -163,6 +165,7 @@ class ArticlesController < ContentController
 
   # See an article We need define @article before
   def show_article
+    @contents = Article.order("published_at desc").limit(5)
     @comment      = Comment.new
     @page_title   = this_blog.article_title_template.to_title(@article, this_blog, params)
     @description = this_blog.article_desc_template.to_title(@article, this_blog, params)

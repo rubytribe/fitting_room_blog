@@ -1,5 +1,7 @@
 <% unless controller.action_name == 'redirect' %>
   <%= render 'articles/article_excerpt', { :article => article } %>
 <% else %>
+  <div class ="art-cont">
   <%= render 'articles/full_article_content', { :article => article } %>
+</div>
 <% end %>
