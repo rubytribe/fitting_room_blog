@@ -118,9 +118,9 @@
                     </div>
 
                     <div id="share-post">
-                      <%= link_to image_tag('/images/theme/assets/facebook_slider.png'), "http://www.facebook.com/sharer.php?u=#{article.title} #{article.permalink_url} from #{this_blog.blog_name} #{this_blog.base_url}" %>
+                      <%= link_to image_tag('/images/theme/assets/facebook_slider.png'), "http://www.facebook.com/sharer.php?u=#{article.permalink_url} #{article.title} from #{this_blog.blog_name} #{this_blog.base_url}" %>
                       <%= link_to image_tag('/images/theme/assets/tweet_slider.png'),"http://twitter.com/home?status=#{article.title} #{article.permalink_url} from #{this_blog.blog_name} #{this_blog.base_url}" %> 
-                      <%= link_to image_tag('/images/theme/assets/pin_slider.png'),"http://pinterest.com/pin/create/link/?url=#{article.title} #{article.permalink_url} from #{this_blog.blog_name} #{this_blog.base_url}&media={#{article.body.scan(/<img src=\"[^>]*>/).first}}" %>              
+                      <%= link_to image_tag('/images/theme/assets/pin_slider.png'),"http://pinterest.com/pin/create/unknown/?url=#{article.permalink_url}&amp;media=#{article.body.scan(/http[^>]*.jpg/).second}&amp;description=#{article.title} from #{this_blog.blog_name} #{this_blog.base_url}" %>              
                     </div>
                   </div>
                 </li>

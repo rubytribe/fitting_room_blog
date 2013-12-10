@@ -26,33 +26,7 @@ body {
 .container .row .span8 div .time-search,.container .row .span8 div .comments a{
   font-family: HelveticaNeue;
 }
-/*
-.container .row .span8 div h2 a{
-  font: 28px HelveticaNeue;
-  color: #57b3be;
-}
-.container .row .span8 div h2 a:hover{
-  text-decoration: underline;
-  color: #e05e59;
-}
-.container .row .span8 div p{
-  font: 22px HelveticaNeue;
-  color: #403145;
-}
-.container .row .span8 div .time-search{
-  font: 18px HelveticaNeue;
-  color: #e05e59;
-}
 
-.container .row .span8 div .comments a{
-  font: 18px HelveticaNeue;
-  color: #403145;
-}
-
-.container .row .span8 div .comments a:hover{
-  color: #e05e59;
-  text-decoration: underline;
-}*/
 a .logo-img{
   background: url("/images/theme/assets/logo.png");
   width: 332px;
@@ -89,6 +63,7 @@ a .logo-img{
 }
 .menu .nav li a:hover{
   text-decoration: none;
+  background-color: transparent;
 }
 .menu .nav li a img.app{
   margin-top:-20px;
@@ -132,10 +107,6 @@ p.article-title{
   
 }
 .footer hr {
-  /*
-  border-color:2px solid #e05e59;
-  background-color:#e05e59;
-  color: #e05e59;*/
   display: block; 
   height: 1px;
   border: 0; 
@@ -166,9 +137,7 @@ p.article-title{
 #sidebar {
   font-size: 14pt;
   font-family: HelveticaNeue;
-  margin-top: 46px;
-  
-  
+  margin-top: 46px;  
 }
 #sidebar h3, #sidebar h3.sidebar-title label{
   font: 20pt HelveticaNeue;
@@ -322,7 +291,6 @@ p.article-title{
   z-index: 45;
 }
 
-
 .centered-btns_nav.next {
   left: 1122px;
   z-index: 45;
@@ -463,26 +431,20 @@ article.h-entry #article-description{
 .static-body .one a,.static-body .two a{
   text-decoration: none;
 }
-
-/****TO DOS****
-
-STRIP THE SUBTITLE TO 100chars
-
-make only the first article big
-*/
-/***submit filter btn*/
 #sform input.filter{
   border: 1px solid #403145;
 
 }
 #sform input#submit-filter{
-  background: url("images/theme/assets/submit.png") no-repeat;
-  
+  background: #fff;
   cursor:pointer;
   width: 104px;
   height: 31px;
   border: 1px solid #403145;
   box-shadow: 1px 1px 1px #403145;
+  font: 15px HelveticaNeue;
+  color:#403145;
+  padding-top: 8px;
 }
 
 /*** no posts found***/
@@ -492,13 +454,16 @@ make only the first article big
   margin-top: 45px;
 
 }
-.article img, .article, .article .here-article-prot{
+.article img {
   width: 676px;
   height: 514px;
   position: relative;
- /* overflow: hidden;*/
+ overflow: hidden;
 }
-
+.article, .article .here-article-prot{
+  width: 676px;
+  position: relative;
+}
 .form-actions{
   margin-top:24px;
 }
@@ -507,7 +472,6 @@ make only the first article big
   box-shadow: 1px 1px 1px #403145;
   background-color: #fff;
 }
-
 
 .form-actions #form-submit-button:focus, .form-actions #form-submit-button:active{
   border: 1px solid #403145;
@@ -526,7 +490,19 @@ make only the first article big
   max-width: 100px;
   height: 100px;
 }
+ul#commentList{
+  font: 18px HelveticaNeue;
+  color: #403145;
 
+}
+ul#commentList li h4 a{
+  color:#57b3be;
+}
+
+div#commentform h3 {
+  font: 20px HelveticaNeue;
+  color: #403145;
+}
 @media screen and (min-width : 768px) and (max-width : 1024px) {
   #sidebar {
     margin-left: 90px;
@@ -543,6 +519,7 @@ make only the first article big
     position: relative;
   }
 }
+
 @media screen and (max-width : 768px){
   .hfeed {
     left: -146px;

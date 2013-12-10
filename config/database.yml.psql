@@ -1,26 +1,8 @@
-login: &login
-  adapter: postgresql
-  host: localhost
-  port: 
-  username: userF
-  password: fittingroom234
-
-connection: &connection
-  encoding: unicode
-  pool: 5
-
-
 development:
+  adapter: postgresql
+  encoding: unicode
   database: publify_dev
-  <<: *login
-  <<: *connection
-
-test:
-  database: publify_tests
-  <<: *login
-  <<: *connection
-
-production:
-  database: publify
-  <<: *login
-  <<: *connection
+  host: localhost
+  pool: 5
+  username: cris1
+  password: cris1
