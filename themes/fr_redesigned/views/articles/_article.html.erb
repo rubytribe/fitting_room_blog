@@ -1,0 +1,21 @@
+<article id="article-<%= article.id %>" class='h-entry hentry h-as-note'>
+  <div id="article-description">
+  	<h2 class='page-header p-name entry-title'>
+  		<%= (controller.controller_name == 'redirect') ? article.title : link_to_permalink(article,article.title) %>
+  	</h2>
+    <div class="share-on-article">
+      <%= link_to image_tag('/images/theme/assets/facebook_slider.png'), "http://www.facebook.com/sharer.php?u=#{article.title} #{article.permalink_url} from #{this_blog.blog_name} #{this_blog.base_url}" %>
+      <%= link_to image_tag('/images/theme/assets/tweet_slider.png'),"http://twitter.com/home?status=#{article.title} #{article.permalink_url} from #{this_blog.blog_name} #{this_blog.base_url}" %> 
+      <%= link_to image_tag('/images/theme/assets/pin_slider.png'),"http://pinterest.com/pin/create/link/?url=#{article.title} #{article.permalink_url} from #{this_blog.blog_name} #{this_blog.base_url}" %>     
+    </div>
+  </div>
+  <div class='e-content entry-content article'>
+  	
+    <%= render 'articles/protected_article_content', { :article => article } %>
+    <%= render 'articles/meta', article: article %>    
+  </div>
+
+  <div class='comments'>
+    <%= render 'articles/comment_counter', article: article %>
+  </div>
+</article>

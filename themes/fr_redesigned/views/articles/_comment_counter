@@ -1,0 +1,4 @@
+<%= link_to pluralize(article.published_comments.size,
+          _('Has %d comments', article.published_comments.size),
+          _('Has %d comment', article.published_comments.size),
+          _('Has %d comments', article.published_comments.size)), article.permalink_url %>

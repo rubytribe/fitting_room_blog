@@ -30,6 +30,7 @@ gem 'rails_autolink', '~> 1.1.0'
 gem 'dynamic_form', '~> 1.1.4'
 
 gem 'iconv'
+gem 'unicorn'
 
 group :development, :test do
   gem 'thin'
