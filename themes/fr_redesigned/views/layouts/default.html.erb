@@ -2,6 +2,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head profile="http://gmpg.org/xfn/11">
+   <meta property="og:image" content="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-prn1/935987_206234766224369_1621438201_n.jpg"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FittingRoom Blog</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -34,15 +35,14 @@
   </script>
 </head>
 <body>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
-
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   <div id="external">
     <div id='main'>
       <div class='container'>
@@ -85,10 +85,10 @@
             <div class='span5'></div>
             <ul class='nav'>
               <li><%= link_to(_('HOME'), this_blog.base_url)%></li>
-              <li><a href="#">ABOUT US</a></li>
-              <li><a href="#">SHOPPING<img src="/images/theme/assets/drop_down.png"></a></li>
-              <li><a href="#">STYLE<img src="/images/theme/assets/drop_down.png"></a></li>
-              <li><a href="#">CONTRIBUTORS</a></li>
+              <li><a href="">ABOUT US</a></li>
+             <!-- <li><a href="#">SHOPPING<img src="/images/theme/assets/drop_down.png"></a></li>
+              <li><a href="#">STYLE<img src="/images/theme/assets/drop_down.png"></a></li>-->
+              <li><a href="contributors.html">CONTRIBUTORS</a></li>
               <li><a href="https://itunes.apple.com/us/app/fittingroom-fashion-advice/id726307268?mt=8">APP<img class="app" src="/images/theme/assets/iphone.png"></a></li>
               <%- Page.published.each do |page| %>
                   <li><%= link_to_permalink(page, page.title) %></li>
@@ -111,16 +111,16 @@
                   <div class="caption">
                     <p ><%= article.title%></p>
                     <p id="after-title">
-                      <%= article.body.scan(/[^>]*\<\/\p\>/).first.truncate(60)%> 
+                      <%= article.body.scan(/[^>]*\<\/\p\>/).first.truncate(80)%> 
                     </p>
                     <div id="read-post">
                       <%= link_to_permalink(article, _("Read post")) %>
                     </div>
 
-                    <div id="share-post">
-                      <%= link_to image_tag('/images/theme/assets/facebook_slider.png'), "http://www.facebook.com/sharer.php?u=#{article.permalink_url} #{article.title} from #{this_blog.blog_name} #{this_blog.base_url}" %>
+                    <div id="share-post">                  
+                      <%= link_to image_tag('/images/theme/assets/facebook_slider.png'), "http://www.facebook.com/sharer.php?u=#{article.permalink_url}" %>
                       <%= link_to image_tag('/images/theme/assets/tweet_slider.png'),"http://twitter.com/home?status=#{article.title} #{article.permalink_url} from #{this_blog.blog_name} #{this_blog.base_url}" %> 
-                      <%= link_to image_tag('/images/theme/assets/pin_slider.png'),"http://pinterest.com/pin/create/unknown/?url=#{article.permalink_url}&amp;media=#{article.body.scan(/http[^>]*.jpg/).second}&amp;description=#{article.title} from #{this_blog.blog_name} #{this_blog.base_url}" %>              
+                      <%= link_to image_tag('/images/theme/assets/pin_slider.png'),"http://pinterest.com/pin/create/unknown/?url=#{article.permalink_url}&amp;media=#{article.body.scan(/http[^>]*.jpg/).first}&amp;description=#{article.title} #{article.permalink_url}" %>              
                     </div>
                   </div>
                 </li>

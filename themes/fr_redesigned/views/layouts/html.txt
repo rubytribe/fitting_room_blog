@@ -1,7 +1,0 @@
-<div class="caption-block">
-                <p class="article-title">Lorem Ipsum</p>
-              </div>
-
-              <div class="body-text">
-  		<%= article.body.scan(/[^>]*\r\n/).first %>
-  	</div>
