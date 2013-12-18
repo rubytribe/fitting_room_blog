@@ -11,25 +11,24 @@
   <%= javascript_include_tag "/stylesheets/theme/responsiveslides.min.js" %> 
   <script>
     $(function() {
-      $(".rslides").responsiveSlides(
-        {
-      auto: true,             // Boolean: Animate automatically, true or false
-      speed: 500,            // Integer: Speed of the transition, in milliseconds
-      timeout: 3000,          // Integer: Time between slide transitions, in milliseconds
-      pager: false,           // Boolean: Show pager, true or false
-      nav: true,             // Boolean: Show navigation, true or false
-      random: false,          // Boolean: Randomize the order of the slides, true or false
-      pause: false,           // Boolean: Pause on hover, true or false
-      pauseControls: true,    // Boolean: Pause when hovering controls, true or false
-      prevText: "",   // String: Text for the "previous" button
-      nextText: "",       // String: Text for the "next" button
-      maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
-      navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
-      manualControls: "",     // Selector: Declare custom pager navigation
-      namespace: "centered-btns",   // String: Change the default namespace used
-      before: function(){},   // Function: Before callback
-      after: function(){}     // Function: After callback
-    });
+      $(".rslides").responsiveSlides({
+        auto: true,             // Boolean: Animate automatically, true or false
+        speed: 500,            // Integer: Speed of the transition, in milliseconds
+        timeout: 3000,          // Integer: Time between slide transitions, in milliseconds
+        pager: false,           // Boolean: Show pager, true or false
+        nav: true,             // Boolean: Show navigation, true or false
+        random: false,          // Boolean: Randomize the order of the slides, true or false
+        pause: false,           // Boolean: Pause on hover, true or false
+        pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+        prevText: "",   // String: Text for the "previous" button
+        nextText: "",       // String: Text for the "next" button
+        maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+        navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+        manualControls: "",     // Selector: Declare custom pager navigation
+        namespace: "centered-btns",   // String: Change the default namespace used
+        before: function(){},   // Function: Before callback
+        after: function(){}     // Function: After callback
+      });
     });
     
   </script>
@@ -85,62 +84,14 @@
             <div class='span5'></div>
             <ul class='nav'>
               <li><%= link_to(_('HOME'), this_blog.base_url)%></li>
-              <li><a href="">ABOUT US</a></li>
-             <!-- <li><a href="#">SHOPPING<img src="/images/theme/assets/drop_down.png"></a></li>
-              <li><a href="#">STYLE<img src="/images/theme/assets/drop_down.png"></a></li>-->
-              <li><a href="contributors.html">CONTRIBUTORS</a></li>
-              <li><a href="https://itunes.apple.com/us/app/fittingroom-fashion-advice/id726307268?mt=8">APP<img class="app" src="/images/theme/assets/iphone.png"></a></li>
               <%- Page.published.each do |page| %>
                   <li><%= link_to_permalink(page, page.title) %></li>
               <%- end %>
+              <li><a href="https://itunes.apple.com/us/app/fittingroom-fashion-advice/id726307268?mt=8">APP<img class="app" src="/images/theme/assets/iphone.png"></a></li> 
             </ul>
         </div>
       </div>
-      
-      <div class="slider">
-        <div class="row">
-          <div class="span13">
-            <div class="images">
-              <ul class="rslides centered-btns centered-btns-1" id="slider1">    
-                <% @contents.each do |article| %>         
-                  
-                <li>
-                  <div class="date"><%= article.published_at.strftime("%m.%d.%Y") %></div> 
-                  <%= article.body.scan(/<img src=\"[^>]*>/).first %>
-
-                  <div class="caption">
-                    <p ><%= article.title%></p>
-                    <p id="after-title">
-                      <%= article.body.scan(/[^>]*\<\/\p\>/).first.truncate(80)%> 
-                    </p>
-                    <div id="read-post">
-                      <%= link_to_permalink(article, _("Read post")) %>
-                    </div>
-
-                    <div id="share-post">                  
-                      <%= link_to image_tag('/images/theme/assets/facebook_slider.png'), "http://www.facebook.com/sharer.php?u=#{article.permalink_url}" %>
-                      <%= link_to image_tag('/images/theme/assets/tweet_slider.png'),"http://twitter.com/home?status=#{article.title} #{article.permalink_url} from #{this_blog.blog_name} #{this_blog.base_url}" %> 
-                      <%= link_to image_tag('/images/theme/assets/pin_slider.png'),"http://pinterest.com/pin/create/unknown/?url=#{article.permalink_url}&amp;media=#{article.body.scan(/http[^>]*.jpg/).first}&amp;description=#{article.title} #{article.permalink_url}" %>              
-                    </div>
-                  </div>
-                </li>
-                <% end %>
-              </ul>   
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id='page' class='container'>
-        <div class='row'>
-          <div class='span8'>
-            <%= yield %>
-          </div>
-          <div id='sidebar' class='span3'>
-            <%= render_sidebars %>
-          </div>
-        </div>
-      </div>
+      <%= yield %>
       <div class="footer">
         <hr>
         <ul>
@@ -160,6 +111,5 @@
       </div>
     </div>
   </div>
-
 </body>
 </html>
