@@ -467,6 +467,7 @@ article.h-entry #article-description{
 }
 .form-actions{
   margin-top:24px;
+  margin-bottom: 25px;
 }
 .form-actions #form-submit-button{
   border: 1px solid #403145;
