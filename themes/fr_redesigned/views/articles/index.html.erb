@@ -10,7 +10,7 @@
 						<div class="caption">
                     		<p ><%= article.title%></p>
                     		<p id="after-title">
-                      			<%= article.body.scan(/[^>]*\<\/\p\>/).first.truncate(80)%> 
+                      			<%= article.body.scan(/[^>]*\<\/\p\>/).first.truncate(60)%> 
                     		</p>
                     	<div id="read-post">
                       		<%= link_to_permalink(article, _("Read post")) %>
