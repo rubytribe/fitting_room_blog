@@ -130,7 +130,7 @@ class ArticlesController < ContentController
   def tag
     redirect_to tags_path, status: 301
   end
-
+  
   def preview_page
     @page = Page.find(params[:id])
     render 'view_page'
