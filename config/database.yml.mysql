@@ -1,0 +1,18 @@
+login: &login
+  adapter: mysql2
+  host: localhost
+  username: user
+  password: pass
+
+
+development:
+  database: publify_dev
+  <<: *login
+
+test:
+  database: publify_tests
+  <<: *login
+
+production:
+  database: publify
+  <<: *login
