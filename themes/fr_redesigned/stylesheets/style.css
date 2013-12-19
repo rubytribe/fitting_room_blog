@@ -26,6 +26,11 @@ body {
 .container .row .span8 div .time-search,.container .row .span8 div .comments a{
   font-family: HelveticaNeue;
 }
+.span4 a {text-decoration: none;}
+.span4 a .logo-img{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 a .logo-img{
   background: url("/images/theme/assets/logo.png");
@@ -42,7 +47,7 @@ a .logo-img{
   margin-top: 10px;
   background: url("/images/theme/assets/search_yellow.png") no-repeat;
   background-position: 119px 7px;
-  margin-left: 60px;
+  position: relative;
 }
 
 #main #search-top:focus{
@@ -50,11 +55,12 @@ a .logo-img{
 }
 .menu .nav{
   position: relative;
-  left: 200px;
+  top:80px;
+  left: 100px
 }
 .menu .nav li{
   display: inline-block;
-  margin-right: 17px;
+  margin-right: 60px;
 
 }
 .menu .nav li a {
@@ -152,30 +158,32 @@ p.article-title{
   color: #403145;
 }
 
-#sidebar ul#categories li,#sidebar ul#archives li{
+#sidebar ul#authors li,#sidebar ul#archives li{
   font: 10pt HelveticaNeue;
   text-transform: uppercase;
   list-style: none;
   color: #403145;
 }
-#sidebar ul#categories li a,#sidebar ul#archives li a{
+#sidebar ul#authors li a,#sidebar ul#archives li a,#sidebar ul#categories li a{
   text-decoration: none;
   font: 10pt HelveticaNeue;
   text-transform: uppercase;
   list-style: none;
   color: #403145;
+  margin-left: 30px;
 }
-#sidebar ul#categories li a:hover,#sidebar ul#archives li a:hover{
+#sidebar ul#authors li a:hover,#sidebar ul#archives li a:hover,#sidebar ul#categories li a:hover{
   text-decoration: underline;
 }
-.popular_sidebar{ //nu mere ceva
-  width: 250px;
+.popular_sidebar{ 
+  width: 350px;
   height: 60px;
   display: inline;
   padding: 0;
   margin: 0;
 
 }
+
 /*************SLIDER*************/
 .images {
   width: 1022px;
@@ -258,12 +266,17 @@ p.article-title{
   top: 250px;
   left: 300px;
 }
-
-.rslides li .caption #share-post a img{
+#share-post-read a img{
   margin-right: 10px;
   width: 34px;
   height: 34px;
-  
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.rslides li .caption #share-post a img{
+  margin-right: 10px;  
+  z-index: 9999;
+  margin-top: 0px;
 }
 
 .rslides li .caption #after-title{
@@ -293,7 +306,9 @@ p.article-title{
 }
 
 .centered-btns_nav.next {
-  left: 1122px;
+  left: 50%;
+  right: 50%;
+  margin-left: 479px;
   z-index: 45;
   position: absolute;
   behavior:url(-ms-transform.htc);
@@ -318,6 +333,7 @@ h2.page-header a{
   color:white;
   font: 28px HelveticaNeue;
   text-decoration: none;
+  padding: 430px 382px 60px 0px;
 }
 article .e-content .body-text{
   color:red;
@@ -343,7 +359,9 @@ article .e-content .meta .article-date{
 }
 
 article.h-entry{
-  padding-bottom: 50px;
+  margin-bottom: 50px;
+  height: 514px;
+  width: 676px;
 }
 article.h-entry #article-description h2.page-header{
   text-indent: 20px;
@@ -406,7 +424,7 @@ article.h-entry #article-description{
 /****comments*******/
 .article .page-header a, .article h3.feedback a{
   color:#e05e59;
-  font: 28px  HelveticaNeue;
+  font: 15px  HelveticaNeue;
   text-decoration: none;
   
 }
@@ -486,10 +504,11 @@ article.h-entry #article-description{
   color:white;
   text-decoration: none;
   font: 14px HelveticaNeue;
-  padding-top: 3px;
+  position: relative;
+  padding: 89px 95px 0 0;
 }
 .popular_sidebar li .popular-article img{
-  max-width: 100px;
+  max-width: 130px;
   height: 100px;
 }
 ul#commentList{
@@ -505,6 +524,18 @@ div#commentform h3 {
   font: 20px HelveticaNeue;
   color: #403145;
 }
+#share-post a img{
+  margin-top: 20px;
+  max-width: 34px;
+  max-height: 34px;
+}
+.pagination > .page, .next{
+  margin-right: 3%;
+}
+#date-art .meta {
+  font: 20px HelveticaNeue;
+  color:#403145;
+}
 @media screen and (min-width : 768px) and (max-width : 1024px) {
   #sidebar {
     margin-left: 90px;
@@ -519,6 +550,7 @@ div#commentform h3 {
     left: 95px;
     width: 952px;
     position: relative;
+
   }
 }
 

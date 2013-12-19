@@ -48,33 +48,18 @@
     <div id='main'>
       <div class='container'>
         <div class="row">
-          <div class='span4'>
-            <%- if controller.controller_name == 'articles' and controller.action_name.include? 'index' %>
-              <a href="http://blog.thefittingroomapp.com">
-                <div class="logo-img">
-                </div>
-              </a>
-              
-            <%- else %>
-               <a href="http://blog.thefittingroomapp.com">
-                <div class="logo-img">
-                </div>
-              </a>
-            <%- end %>  
-            
-          </div>
-          <div class="span4"></div>
+          <div class="span7"></div>
           <div class="span1">
             <form accept-charset="UTF-8" action="/search" id="sform" method="get">
               <input type="search" name="q" id="live_search" class="yellow-search" 
               style="border: 1px solid #e2b656;
                         border-radius: 0px;
-                        width:150px;
+                        width:320px;;
                         height: 20px;
                         margin-top: 10px;
                         background: url('/images/theme/assets/search_yellow.png') no-repeat;
-                        background-position: 140px 7px;
-                        margin-left: 64px;
+                        background-position: 312px 7px;
+                        margin-left:-10px;
                         position:absolute;">
 
             </form>
@@ -82,33 +67,45 @@
         </div>
       </div>
       <div class='row'>
-        <div class='menu'>
-            <div class='span5'></div>
-            <ul class='nav'>
-              <li><%= link_to(_('HOME'), this_blog.base_url)%></li>
-              <%- Page.published.each do |page| %>
-                  <li><%= link_to_permalink(page, page.title) %></li>
-              <%- end %>
-              <li><a href="https://itunes.apple.com/us/app/fittingroom-fashion-advice/id726307268?mt=8">APP<img class="app" src="/images/theme/assets/iphone.png"></a></li> 
-            </ul>
-        </div>
+        <div class='span4'>
+          <%- if controller.controller_name == 'articles' and controller.action_name.include? 'index' %>
+            <a href="http://blog.thefittingroomapp.com">
+              <div class="logo-img">
+              </div>
+            </a>
+          <%- else %>
+             <a href="http://blog.thefittingroomapp.com">
+              <div class="logo-img">
+              </div>
+            </a>
+          <%- end %>  
+            
+          </div>      
+          <div class="span6">  
+            <div class='menu'>             
+              <ul class='nav'>
+                <li><%= link_to(_('HOME'), this_blog.base_url)%></li>
+                <%- Page.published.each do |page| %>
+                    <li><%= link_to_permalink(page, page.title) %></li>
+                <%- end %>
+                <li><a href="https://itunes.apple.com/us/app/fittingroom-fashion-advice/id726307268?mt=8">APP<img class="app" src="/images/theme/assets/iphone.png"></a></li> 
+              </ul>
+            </div>
+          </div> 
       </div>
+
       <%= yield %>
+
       <div class="footer">
         <hr>
         <ul>
           <li>© 2013 FittingRoom Blog | </li>
-          <li><a href="#">ABOUT US </a></li>
+
+          <li><a href="/pages/about-us">ABOUT US </a></li>
           <li>|</li>
-          <li><a href="#"> ARCHIVE </a></li>
-          <li>|</li>
-          <li><a href="#"> PRIVACY POLICY </a></li>
-          <li>|</li>
-          <li><a href="#"> CONTACT </a></li>
-          <li>|</li>
-          <li><a href="#"> COPYRIGHT </a></li>
-          <li>|</li>
-          <li><a href="#"> CAREERS</a></li>
+          <li><a href="/pages/contributors"> CONTRIBUTORS </a></li>
+          <li>|</li>        
+          <li><a href="/pages/contact"> CONTACT </a></li>
         </ul>
       </div>
     </div>

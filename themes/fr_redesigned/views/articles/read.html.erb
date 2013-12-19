@@ -5,8 +5,13 @@
         <h1 class='page-header'><%= link_to_permalink(@article,@article.title) %></h1>
         <%= @article.html(:body) %>
         <%= @article.html(:extended) %>
-
-        <%= render 'articles/meta', article: @article %>
+        <div id="share-post-read">                  
+          <%= link_to image_tag('/images/theme/assets/facebook_slider.png'), "http://www.facebook.com/sharer.php?u=#{@article.permalink_url}" %>
+          <%= link_to image_tag('/images/theme/assets/tweet_slider.png'),"http://twitter.com/home?status=#{@article.title} #{@article.permalink_url} from #{this_blog.blog_name} #{this_blog.base_url}" %> 
+          <%= link_to image_tag('/images/theme/assets/pin_slider.png'),"http://pinterest.com/pin/create/unknown/?url=#{@article.permalink_url}&amp;media=#{@article.body.scan(/http[^>]*.jpg/).first}&amp;description=#{@article.title} #{@article.permalink_url}" %>              
+        </div>
+        <div id="date-art"> <%= render 'articles/meta', article: @article %> </div>
+        
 
           <% if @article.user.twitter %>
           <div class='well'>
@@ -17,7 +22,7 @@
           <% if @article.allow_comments? or @article.published_comments.size > 0 -%>
           <h3 class="feedback" id="commentaires">
             <%= render 'articles/comment_counter', article: @article %>
-            <a href="#commentform" ref="nofollow"> &raquo;</a>
+            
           </h3>
           <%= render "articles/comment_list" %>
           <% end -%>
