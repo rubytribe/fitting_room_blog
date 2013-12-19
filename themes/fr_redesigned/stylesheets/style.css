@@ -424,9 +424,14 @@ article.h-entry #article-description{
 /****comments*******/
 .article .page-header a, .article h3.feedback a{
   color:#e05e59;
-  font: 15px  HelveticaNeue;
   text-decoration: none;
   
+}
+.article .page-header a{
+  font: 22px  HelveticaNeue;
+}
+.article h3.feedback a{
+  font: 15px  HelveticaNeue;  
 }
 .article .page-header a:hover,.article .feedback a:hover{
   text-decoration: underline;
