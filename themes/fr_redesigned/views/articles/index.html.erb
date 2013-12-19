@@ -1,6 +1,46 @@
-<div class='hfeed'>
-  <%= render @articles %>
+ <div class="slider">
+    <div class="row">
+        <div class="span13">
+            <div class="images">
+              	<ul class="rslides centered-btns centered-btns-1" id="slider1">    
+                	<% @contents.each do |article| %>         
+                  	<li>
+                  		<div class="date"><%= article.published_at.strftime("%m.%d.%Y") %></div> 
+                  		<%= article.body.scan(/<img src=\"[^>]*>/).first %>
+						          <div class="caption">
+                    		<p ><%= article.title%></p>
+                    		<p id="after-title">
+                      			<%= article.body.scan(/[^>]*\<\/\p\>/).first.truncate(60)%> 
+                    		</p>
+                    	<div id="read-post">
+                      		<%= link_to_permalink(article, _("Read post")) %>
+                    	</div>
+
+                   		<div id="share-post">                  
+	                      	<%= link_to image_tag('/images/theme/assets/facebook_slider.png'), "http://www.facebook.com/sharer.php?u=#{article.permalink_url}" %>
+	                      	<%= link_to image_tag('/images/theme/assets/tweet_slider.png'),"http://twitter.com/home?status=#{article.title} #{article.permalink_url} from #{this_blog.blog_name} #{this_blog.base_url}" %> 
+	                      	<%= link_to image_tag('/images/theme/assets/pin_slider.png'),"http://pinterest.com/pin/create/unknown/?url=#{article.permalink_url}&amp;media=#{article.body.scan(/http[^>]*.jpg/).first}&amp;description=#{article.title} #{article.permalink_url}" %>              
+                    	</div>
+                  		</div>
+                	</li>
+                	<% end %>
+              	</ul>   
+            </div>
+        </div>
+    </div>
 </div>
-<div class='paginate'>
-  <%= paginate(@articles)%>
+<div id='page' class='container'>
+    <div class='row'>
+     	<div class='span8'>   
+			<div class='hfeed'>
+			  <%= render @articles %>
+			</div>
+			<div class='paginate'>
+			  <%= paginate(@articles)%>
+			</div>
+		</div>
+		<div id='sidebar' class='span3'>
+		    <%= render_sidebars %>
+		 </div>
+    </div>
 </div>

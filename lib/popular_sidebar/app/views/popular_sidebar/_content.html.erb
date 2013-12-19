@@ -1,15 +1,15 @@
 <img class="separator" src="/images/theme/assets/side_separator.png"/>
 <h3 class="sidebar-title"><%= sidebar.title %></h3>
-<div style="width:250px;height:227px;overflow:hidden;display:block;">
+<div style="width:350px;height:227px;overflow:hidden;display:block;">
 <ul class='popular_sidebar'>
   <% if sidebar.popular.empty? || sidebar.popular.size == 0 %>
   <li class='alert'><%= _("Nothing to show yet ...") %> !</li>
   <% else %>
     <% sidebar.popular.each do |article| %>
     <li style="list-style:none; display:inline-block;margin-right:20px; margin-top:0;padding:0;position:relative; top:0px;">
-    <div class="popular-article" style="width:100px;height:100px;border:1px solid #403145; ">
+    <div class="popular-article" style="width:130px;height:100px;border:1px solid #403145; ">
     	<%= article.body.scan(/<img src=\"[^>]*>/).first %>
-    	  <p style="background:rgba(0,0,0,.6);position:absolute; width:100px; margin-top:-20px;height:20px;text-indent:5px;">
+    	  <p style="background:rgba(0,0,0,.6);position:absolute; width:130px; margin-top:-20px;height:20px;text-indent:5px;">
     		  <%= sprintf("%s ", link_to_permalink(article, article.title.truncate(14))) %>
    		  </p>
       <% end %>

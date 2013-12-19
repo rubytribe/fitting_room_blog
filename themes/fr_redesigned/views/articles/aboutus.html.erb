@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head profile="http://gmpg.org/xfn/11">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FittingRoom Blog</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  
+  <%= stylesheet_link_tag "/stylesheets/theme/bootstrap.min.css", "/stylesheets/theme/style.css", :media => 'all' %>
+   <%= page_header %> 
+</head>
+<body>
+  <div id="external">
+    <div id='main'>
+      <div class='container'>
+        <div class="row">
+          <div class='span4'>
+              <a href="http://blog.thefittingroomapp.com">
+                <div class="logo-img">
+                </div>
+              </a>          
+          </div>
+         
+        </div>
+      </div>
+      <div class='row'>
+        <div class='menu'>
+            <div class='span5'></div>
+            <ul class='nav'>
+              <li><%= link_to(_('HOME'), this_blog.base_url)%></li>
+              <li><a href="">ABOUT US</a></li>
+              <li><a href="#">SHOPPING<img src="/images/theme/assets/drop_down.png"></a></li>
+              <li><a href="#">STYLE<img src="/images/theme/assets/drop_down.png"></a></li>
+              <li><a href="contributors.html">CONTRIBUTORS</a></li>
+              <li><a href="https://itunes.apple.com/us/app/fittingroom-fashion-advice/id726307268?mt=8">APP<img class="app" src="/images/theme/assets/iphone.png"></a></li>
+              <%- Page.published.each do |page| %>
+                  <li><%= link_to_permalink(page, page.title) %></li>
+              <%- end %>
+            </ul>
+        </div>
+      </div>
+      
+      <div id='page' class='container'>
+        <div class='row'>
+          <div class='span8'>
+            
+          </div>
+          <div id='sidebar' class='span3'>
+            <%= render_sidebars %>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <hr>
+        <ul>
+          <li>© 2013 FittingRoom Blog | </li>
+          <li><a href="">ABOUT </a></li>
+          <li>|</li>
+          <li><a href="#"> ARCHIVES </a></li>
+          <li>|</li>
+          <li><a href="#"> PRIVACY POLICY </a></li>
+          <li>|</li>
+          <li><a href="#"> CONTACT </a></li>
+          <li>|</li>
+          <li><a href="#"> COPYRIGHT </a></li>
+          <li>|</li>
+          <li><a href="#"> CAREERS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

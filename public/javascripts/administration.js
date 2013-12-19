@@ -109,6 +109,7 @@ function get_buttons(textfilter) {
       break;
 
   default:
+      edButtons.push(new edButton('ed_p', 'p', '<p class="subtitle">', '</p>', 'p'));
       edButtons.push(new edButton('ed_bold', 'b', '<strong>', '</strong>', 'b'));
       edButtons.push(new edButton('ed_italic', 'i', '<em>', '</em>', 'i'));
       edButtons.push(new edButton('ed_link', 'link', '', '</a>', 'a'));

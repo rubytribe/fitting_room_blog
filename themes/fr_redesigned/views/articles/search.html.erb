@@ -5,7 +5,7 @@
   <h2><%= link_to_permalink(article,article.title) %></h2>
   <p><%= article.body.strip_html.slice(0, 300) %> [...]</p>
   <div class='time-search'>
-    Published on <%= "#{article.published_at.strftime('%d.')} #{_(article.published_at.strftime('%b.'))} #{article.published_at.strftime('%Y')}" %>
+    Published on <%= "#{article.published_at.strftime('%d.')} #{_(article.published_at.strftime('%m.'))} #{article.published_at.strftime('%Y')}" %>
   </div>
   <div class='comments'>
     <%= render 'articles/comment_counter', article: article %>

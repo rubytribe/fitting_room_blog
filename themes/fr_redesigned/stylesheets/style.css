@@ -26,33 +26,12 @@ body {
 .container .row .span8 div .time-search,.container .row .span8 div .comments a{
   font-family: HelveticaNeue;
 }
-/*
-.container .row .span8 div h2 a{
-  font: 28px HelveticaNeue;
-  color: #57b3be;
-}
-.container .row .span8 div h2 a:hover{
-  text-decoration: underline;
-  color: #e05e59;
-}
-.container .row .span8 div p{
-  font: 22px HelveticaNeue;
-  color: #403145;
-}
-.container .row .span8 div .time-search{
-  font: 18px HelveticaNeue;
-  color: #e05e59;
+.span4 a {text-decoration: none;}
+.span4 a .logo-img{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.container .row .span8 div .comments a{
-  font: 18px HelveticaNeue;
-  color: #403145;
-}
-
-.container .row .span8 div .comments a:hover{
-  color: #e05e59;
-  text-decoration: underline;
-}*/
 a .logo-img{
   background: url("/images/theme/assets/logo.png");
   width: 332px;
@@ -68,7 +47,7 @@ a .logo-img{
   margin-top: 10px;
   background: url("/images/theme/assets/search_yellow.png") no-repeat;
   background-position: 119px 7px;
-  margin-left: 60px;
+  position: relative;
 }
 
 #main #search-top:focus{
@@ -76,11 +55,12 @@ a .logo-img{
 }
 .menu .nav{
   position: relative;
-  left: 17px;
+  top:80px;
+  left: 100px
 }
 .menu .nav li{
   display: inline-block;
-  margin-right: 17px;
+  margin-right: 60px;
 
 }
 .menu .nav li a {
@@ -89,6 +69,7 @@ a .logo-img{
 }
 .menu .nav li a:hover{
   text-decoration: none;
+  background-color: transparent;
 }
 .menu .nav li a img.app{
   margin-top:-20px;
@@ -132,10 +113,6 @@ p.article-title{
   
 }
 .footer hr {
-  /*
-  border-color:2px solid #e05e59;
-  background-color:#e05e59;
-  color: #e05e59;*/
   display: block; 
   height: 1px;
   border: 0; 
@@ -166,9 +143,7 @@ p.article-title{
 #sidebar {
   font-size: 14pt;
   font-family: HelveticaNeue;
-  margin-top: 46px;
-  
-  
+  margin-top: 46px;  
 }
 #sidebar h3, #sidebar h3.sidebar-title label{
   font: 20pt HelveticaNeue;
@@ -183,30 +158,32 @@ p.article-title{
   color: #403145;
 }
 
-#sidebar ul#categories li,#sidebar ul#archives li{
+#sidebar ul#authors li,#sidebar ul#archives li{
   font: 10pt HelveticaNeue;
   text-transform: uppercase;
   list-style: none;
   color: #403145;
 }
-#sidebar ul#categories li a,#sidebar ul#archives li a{
+#sidebar ul#authors li a,#sidebar ul#archives li a,#sidebar ul#categories li a{
   text-decoration: none;
   font: 10pt HelveticaNeue;
   text-transform: uppercase;
   list-style: none;
   color: #403145;
+  margin-left: 30px;
 }
-#sidebar ul#categories li a:hover,#sidebar ul#archives li a:hover{
+#sidebar ul#authors li a:hover,#sidebar ul#archives li a:hover,#sidebar ul#categories li a:hover{
   text-decoration: underline;
 }
-.popular_sidebar{ //nu mere ceva
-  width: 250px;
+.popular_sidebar{ 
+  width: 350px;
   height: 60px;
   display: inline;
   padding: 0;
   margin: 0;
 
 }
+
 /*************SLIDER*************/
 .images {
   width: 1022px;
@@ -289,12 +266,17 @@ p.article-title{
   top: 250px;
   left: 300px;
 }
-
-.rslides li .caption #share-post a img{
+#share-post-read a img{
   margin-right: 10px;
   width: 34px;
   height: 34px;
-  
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.rslides li .caption #share-post a img{
+  margin-right: 10px;  
+  z-index: 9999;
+  margin-top: 0px;
 }
 
 .rslides li .caption #after-title{
@@ -302,14 +284,15 @@ p.article-title{
   font: 20px HelveticaNeue;
   text-align: left;
   position: absolute;
+
 }
 .centered-btns_nav {
-  z-index: 5;
+  z-index: 100;
   position: absolute;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   top: 400px;
   margin-left: 0;
-  overflow: hidden;
+ // overflow: hidden;
   text-decoration: none;
   height: 64px;
   width: 33px;
@@ -322,9 +305,10 @@ p.article-title{
   z-index: 45;
 }
 
-
 .centered-btns_nav.next {
-  left: 1122px;
+  left: 50%;
+  right: 50%;
+  margin-left: 479px;
   z-index: 45;
   position: absolute;
   behavior:url(-ms-transform.htc);
@@ -349,6 +333,7 @@ h2.page-header a{
   color:white;
   font: 28px HelveticaNeue;
   text-decoration: none;
+  padding: 430px 382px 60px 0px;
 }
 article .e-content .body-text{
   color:red;
@@ -374,7 +359,9 @@ article .e-content .meta .article-date{
 }
 
 article.h-entry{
-  padding-bottom: 50px;
+  margin-bottom: 50px;
+  height: 514px;
+  width: 676px;
 }
 article.h-entry #article-description h2.page-header{
   text-indent: 20px;
@@ -437,7 +424,7 @@ article.h-entry #article-description{
 /****comments*******/
 .article .page-header a, .article h3.feedback a{
   color:#e05e59;
-  font: 28px  HelveticaNeue;
+  font: 15px  HelveticaNeue;
   text-decoration: none;
   
 }
@@ -463,26 +450,20 @@ article.h-entry #article-description{
 .static-body .one a,.static-body .two a{
   text-decoration: none;
 }
-
-/****TO DOS****
-
-STRIP THE SUBTITLE TO 100chars
-
-make only the first article big
-*/
-/***submit filter btn*/
 #sform input.filter{
   border: 1px solid #403145;
 
 }
 #sform input#submit-filter{
-  background: url("images/theme/assets/submit.png") no-repeat;
-  
+  background: #fff;
   cursor:pointer;
   width: 104px;
   height: 31px;
   border: 1px solid #403145;
   box-shadow: 1px 1px 1px #403145;
+  font: 15px HelveticaNeue;
+  color:#403145;
+  padding-top: 8px;
 }
 
 /*** no posts found***/
@@ -492,22 +473,25 @@ make only the first article big
   margin-top: 45px;
 
 }
-.article img, .article, .article .here-article-prot{
+.article img {
   width: 676px;
   height: 514px;
   position: relative;
- /* overflow: hidden;*/
+ overflow: hidden;
 }
-
+.article, .article .here-article-prot{
+  width: 676px;
+  position: relative;
+}
 .form-actions{
   margin-top:24px;
+  margin-bottom: 25px;
 }
 .form-actions #form-submit-button{
   border: 1px solid #403145;
   box-shadow: 1px 1px 1px #403145;
   background-color: #fff;
 }
-
 
 .form-actions #form-submit-button:focus, .form-actions #form-submit-button:active{
   border: 1px solid #403145;
@@ -520,13 +504,38 @@ make only the first article big
   color:white;
   text-decoration: none;
   font: 14px HelveticaNeue;
-  padding-top: 3px;
+  position: relative;
+  padding: 89px 95px 0 0;
 }
 .popular_sidebar li .popular-article img{
-  max-width: 100px;
+  max-width: 130px;
   height: 100px;
 }
+ul#commentList{
+  font: 18px HelveticaNeue;
+  color: #403145;
 
+}
+ul#commentList li h4 a{
+  color:#57b3be;
+}
+
+div#commentform h3 {
+  font: 20px HelveticaNeue;
+  color: #403145;
+}
+#share-post a img{
+  margin-top: 20px;
+  max-width: 34px;
+  max-height: 34px;
+}
+.pagination > .page, .next{
+  margin-right: 3%;
+}
+#date-art .meta {
+  font: 20px HelveticaNeue;
+  color:#403145;
+}
 @media screen and (min-width : 768px) and (max-width : 1024px) {
   #sidebar {
     margin-left: 90px;
@@ -541,8 +550,10 @@ make only the first article big
     left: 95px;
     width: 952px;
     position: relative;
+
   }
 }
+
 @media screen and (max-width : 768px){
   .hfeed {
     left: -146px;
